@@ -1,11 +1,10 @@
 {
-  "folders": [
-    {
-      "path": ".",
-      "folder_exclude_patterns": [
-        "_site",
-        ".sass-cache"
-      ]
-    }
-  ]
+	"folders":
+	[
+		{
+			"path": "/home/sieben/Dropbox/workspace/s3_2015",
+			"folder_exclude_patterns": ["_site", ".sass-cache"]
+		}
+	],
+	"path": "."
 }
