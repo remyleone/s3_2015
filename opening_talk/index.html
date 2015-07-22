@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Life of a web request | S3++ Workshop</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Life of a web request</h1>
+					
+					<p>
+						<small>Created by <a href="http://sieben.fr">Remy Leone</a> / <a href="http://twitter.com/remyleone">@remyleone</a></small>
+					</p>
+
+					<a href="http://sieben.fr/s3_2015/opening_talk">sieben.fr/s3_2015/opening_talk</a>
+				</section>
+
+
+				<section>
+					<section data-markdown>
+						# Have you ever wondered what is the Internet?
+					</section>
+
+					<section >
+						<img data-src="welcome_to_the_internet.jpg" alt="">
+					</section>
+
+					<section >
+						<img data-src="fb-relationships-full.jpg"></img>
+						
+					</section>
+
+					<section>
+						<img  data-src="whatif.jpg" ></img>
+					</section>
+
+					<section>
+						<img src="scholar.png" alt="">
+					</section>
+
+					<section>
+						<img data-src="as.png" ></img>
+					</section>
+
+				</section>
+
+				<section>
+
+					<section style="text-align: left;" data-background="newsletter.jpg">
+						<h2>Hi</h2>
+					</section>
+
+					<section data-markdown>
+						_@remyleone_
+						
+						- PhD student @TelecomParisTech
+						- Like to connect things together
+						- Student of s3++ back in 2007
+					</section>
+					
+				</section>
+
+				<section data-markdown>
+					# Life of a web request
+				</section>
+				
+				<section>
+					<section data-markdown>
+						# What will we do?
+
+						- Make a sensor out of a Raspberry pi
+						- Sending information from a Raspberry pi
+					</section>
+
+					<section data-markdown>
+						# Why should I do that?
+
+						- You will understand how the web works.
+						- You will manage to tranfer information efficiently from one computer to an other.
+						- You will understand how most of the information is exchanged
+						on the web today.
+
+					</section>
+
+				</section>
+
+				<section>
+					
+					<section data-markdown>
+						# What's next?		
+					</section>
+
+
+					<section data-markdown>
+						# Web
+
+						- How to make a prettier website (make it work on mobile for instance)
+					</section>
+
+					<section data-markdown>
+						# Network
+
+						- How the Internet works?
+						- How big networks connect to each others?
+					</section>
+
+					<section data-markdown>
+						# Sensing
+
+						- Does all computers are the same?
+						- How to manage audio stream?
+						- How to manage video stream?
+
+					</section>
+
+					<section data-markdown>
+						# Your ideas :-)
+					</section>
+
+				</section>
+
+
+				<section>
+					<section data-markdown>
+						# Come if...	
+
+						- you want to have a better grasp on how the Internet works.
+						- you want to connect things up together.
+						- you don't mind hearing a French accent.
+					</section>
+
+
+				</section>
+
+				<section data-markdown>
+					# Thank you
+
+					
+					Created by [Remy Leone](http://sieben.fr) / [@remyleone](http://twitter.com/remyleone)
+					
+
+					[http://sieben.fr/s3_2015/opening_talk](http://sieben.fr/s3_2015/opening_talk)
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			</script>
+
+		</body>
+		</html>
