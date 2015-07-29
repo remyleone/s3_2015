@@ -1,33 +1,33 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
+	<head>
+		<meta charset="utf-8">
 
-	<title>3food - The HTML Presentation Framework</title>
+		<title>3food - The HTML Presentation Framework</title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-	<!-- Code syntax highlighting -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-	<!-- Printing and PDF exports -->
-	<script>
-	var link = document.createElement( 'link' );
-	link.rel = 'stylesheet';
-	link.type = 'text/css';
-	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-	document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -40,158 +40,112 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-markdown>
-					# Life of a web request
-
-					Theresia, Ozren, Valentin
+				<section>
+					<h1>The coding adventures of 3food</h1>
+					<h3>Now! Free available!</h3>
 				</section>
 
 				<section>
 					<h2><blockquote>
 						&ldquo;GETTING INFORMATION OFF THE INTERNET IS LIKE TAKING A DRINK FROM A FIRE HYDRANT&rdquo;
 					</blockquote></h2>
-					<em>Mitchell Kabor</em>
-				</p>
-			</section>
-
-
-
-			<section>
+						<em>Mitchell Kabor</em>
+					</p>
+				</section>
 
 				<section>
-					<p> <img data-src="catunamused.jpg"> </p>
-					<h1> <p> our goal?! </p> </h1>
-				</section>
-				
-
-				<section data-markdown>
-					- Wanted to get a better understanding of the Internet and the Web
-					- Develop our programming skills
-					- Develop our interest in computer science
-					- We are really fond of French accent :-)
-				</section>				
-
-				<section data-markdown>
-					# Our project
-
-					- Sending temperature information from Raspberry Pi to the Internet
-					- Create a website that shows this temperature
-				</section>
 				
 				
-			</section>
-
-			<section>
-				<section data-markdown>
-					# What we've learned
-				</section>
-
-				<section data-markdown>
-					# The Web
-
-					- Subpart of the Internet
-					- Set of documents connected through links
-					- HTTP is the protocol of the web
-					- HTML is the language of the web
-					<!-- - Created by Tim Bernars-Lee -->
-
-				</section>
-
-
-				<section data-markdown>
-					# The Internet
+				<section>
+					<h1>What is the Web?</h1>
 					
-					- A set of global and open contracts between machines
-					- No central authority
-					- An almost infinite amount of information 
+					
+				</section>
+				
+				<section>
+						<h1>The Internet</h1>
+						<font size="12"> <p class="fragment"> A contract between people</p> </font size="12">
+						<font size="12"> <p class="fragment"> No authority</p> </font size="12">
+						<font size="12"> <p class="fragment"> No centre </p> </font size="12">
+						<font size="12"> <p class="fragment">  An almost infinite amount of information </p> </font size="12">
+					</section>
+					
+				</section>
+				
+				<section>
+				<p> <img data-src="catunamused.jpg"> </p>
+				<h1> <p> our goal?! </p> </h1>
+				</section>
+				
+				<section>
+				<section>
+				<h1> <p> what we have done so far... </p> </h1>
+				
+				</section>
+				
+				<section data-markdown>
+				
+				# Web
+				
+				- Set of documents linked together
+				- Invented by Tim Berners-Lee working at CERN
+				<img data-src="http.jpg" width="400" height="300" align="left">
+				<img data-src="net.jpg" width="400" height="300" align="right">
+				</section>
+			
+			
+			
+				 <section>
+				  <h1> <p> raspberry pi </p> </h1>
+				 <br>
+							<img data-src="RP.jpg" width="225" height="300" align="left" alt="Raspberry Pi logo">
+							<img data-src="RPT.jpg" width="400" height="300" align="right" alt="Raspberry Pi pic">
+				  </section>
+				  
+				<section data-markdown>
+					<script type="text/template">
+						## Raspberry Pi 
+
+						This is a piece of code that is used in programming a Raspberry Pi
+
+						```
+						#!/bin/bash
+
+timestamp=`date +%F_%H-%M-%S`
+echo "Temp Log - $(date)" > ~/logs/temperature_log_$timestamp.txt
+while :
+do
+    temp=`/opt/vc/bin/vcgencmd measure_temp`
+    temp=${temp:5:16}
+    echo $temp >> ~/logs/temperature_log_$timestamp.txt
+    sleep 10
+done
+						
+						```
+					</script>
+				</section>
+				</section>
+				
+
+					<section> 
+					<data-background="http://9gag.com/gag/avL8nmM">
+						<h2>CATS!</h2>
+					</section>
 				</section>
 
-			</section>
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					
+				</section>
 
-		</section>
+			</div>
 
+		</div>
 
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-		<section>
-			<section data-markdown>
-				# what we have done so far... 
-			</section>
-
-			<section data-markdown>
-				# About programming
-
-				- Started coding in Python
-				- Made a script to get the temperature
-				- Created a static website
-			</section>
-
-			<section data-markdown>
-				# About the web
-				
-				- Analyzing the packets passing through the wire using Wireshark
-				- Learned about the protocols
-				- Made this presentation using HTML
-			</section>
-
-
-			<section>
-				<h1>Raspberry pi</h1>  
-				
-				<img data-src="RP.jpg" width="225" height="300" align="left" alt="">
-				<img data-src="RPT.jpg" width="400" height="300" align="right" alt="Raspberry Pi pic">
-			</section>
-
-			<section data-markdown>
-				<script type="text/template">
-				## Raspberry Pi 
-
-				This is a piece of code that is used in programming a Raspberry Pi
-
-				```
-				#!/bin/bash
-
-				timestamp=`date +%F_%H-%M-%S`
-				echo "Temp Log - $(date)" > ~/logs/temperature_log_$timestamp.txt
-				while :
-					do
-						temp=`/opt/vc/bin/vcgencmd measure_temp`
-						temp=${temp:5:16}
-						echo $temp >> ~/logs/temperature_log_$timestamp.txt
-						sleep 10
-					done
-
-				```
-				</script>
-			</section>
-
-
-		</section>
-
-
-
-		<section data-markdown>
-			# What we want to do
-
-
-			- Want to create the complete website
-			- Get it online (when Internet will work :p)
-
-		</section>
-
-		<section >
-			<h1>THE END</h1>
-
-			<img data-src="egypt.jpg"  height="400" align="center" align="center" alt="">
-		</section>
-
-	</div>
-
-</div>
-
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
-
-<script>
+		<script>
 
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -205,16 +159,16 @@
 
 				// Optional reveal.js plugins
 				dependencies: [
-				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: 'plugin/zoom-js/zoom.js', async: true },
-				{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 
-			</script>
+		</script>
 
-		</body>
-		</html>
+	</body>
+</html>
