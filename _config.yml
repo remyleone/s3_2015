@@ -5,4 +5,4 @@ description: S3++ Pozega 2015 (July 24th - August 4nd) - Life of a web request
 baseurl: /s3_2015
 twitter_username: remyleone
 github_username:  sieben
-exclude: [3food]
+exclude: [3food, node_modules]
