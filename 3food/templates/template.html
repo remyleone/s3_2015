@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1><div align="center"> <u> Bonjour from Flask</u> </div> </h1>
+</head>
+
+<ul>
+{% for temp in temperatures %}
+<li>{{ temp }}</li>
+{% endfor %} 
+</ul>
+
+<img src="static/graph.png" alt="temperature graph"> 
+</html>
