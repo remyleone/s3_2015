@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>3food - The HTML Presentation Framework</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Life of a web request</h1>
+
+					<p>
+						<small>Created by  Theresia, Ozren, Valentin (3food)</small>
+					</p>
+
+					<p>
+						<small>Project leader <a href="http://sieben.fr">Remy Leone</a> / <a href="http://twitter.com/remyleone">@remyleone</a></small>
+					</p>
+
+
+					<a href="http://sieben.fr/s3_2015/final_talk">sieben.fr/s3_2015/final_talk</a>
+
+					
+				</section>
+
+		</section>
+
+	<section data-markdown>
+		# Our project
+
+		- Creating a website
+		- Understanding how the web works
+	</section>
+
+
+<section>
+
+
+
+	
+<section data-markdown>
+				# Materials and Methods
+
+				- Treat the web as a phenomenon and dissect it
+				- Build a web server yourself
+			</section>
+
+
+
+			<section>
+				<h1>Raspberry pi</h1>  
+				
+				<img data-src="RP.jpg" width="225" height="300" align="left" alt="">
+				<img data-src="RPT.jpg" width="400" height="300" align="right" alt="Raspberry Pi pic">
+			</section>
+
+			<section data-markdown>
+				# Wireshark
+
+				- Capture packets and reveal information about them
+			</section>
+
+			<section data-background="wireshark_capture.png" data-markdown>
+
+			</section>
+
+	<section data-markdown>
+		# The web in 2 minutes
+
+		- Web browsers send HTTP requests to a web server
+		- HTTP is a simple protocols built around verbs (GET, POST)
+		- HTTP is a text protocol => easy to inspect
+	</section>
+
+
+</section>
+
+
+<section>
+	
+		<section>
+			
+			<img src="letsmakeawebsite.jpg">
+		</section>
+
+			<section data-markdown>
+				# How to manage information?
+
+				1. Get the temperature
+				2. Put it into a database
+				3. Manage incoming web requests
+				4. Render a web page with the latest data
+			</section>
+
+
+			<section data-markdown>
+				# Let's get started
+
+
+				![Let's get started](getstarted.gif)
+			</section>
+</section>
+
+			<section>
+
+			<section data-markdown>
+				# Python
+				
+				Get the temperature and act as a glue between everything
+
+				![Python](python.png)
+
+				- General purpose language
+				- Easy to learn
+				- Shipped with Raspberry Pi
+			</section>
+
+			<section >
+				<h1>Flask</h1>
+
+				HTTP requests manager 
+
+	<pre>
+		<code data-trim contenteditable>
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
+
+		</code>
+	</pre>			    
+
+			</section>
+
+
+
+			<section data-markdown>
+				# Jinja 2
+
+				_The webpage maker_
+	
+	<pre>
+		<code>
+    <ul>
+    {% for temp in temperatures %}
+      <li>{{ temp }}</li>
+    {% endfor %} 
+    </ul>
+			
+		</code>
+	</pre>			    
+    
+
+will be transformed into
+
+<pre>
+<code >
+&lt;ul&gt;
+      &lt;li&gt;42&lt;/li&gt;
+      &lt;li&gt;42.69&lt;/li&gt;
+      &lt;li&gt;42.96&lt;/li&gt;
+    &lt;/ul&gt;
+    </code>
+	
+</pre>
+
+
+			</section>
+
+			<section >
+				<h1>Redis</h1>
+				The data store
+
+<p>
+				<ul>
+					<li>Simple to use</li>
+					<li>Works with Python</li>
+				</ul>
+
+</p>
+					<pre>
+						<code data-trim contenteditable>
+import redis
+r = redis.Redis()
+r.rpush("temperature list", 42)
+						</code>
+					</pre>
+
+			</section>
+				
+			</section>
+
+
+
+		<section>
+			
+
+		<section data-markdown>
+			# It works :-)
+
+			For a live version, check out [flower.sieben.fr](flower.sieben.fr)
+
+		</section>
+
+			<section data-background="website.png">
+
+				
+			</section>
+
+		</section>
+
+
+<section>
+	<section data-markdown>
+		
+		# What we learned
+
+		- A little about programming
+		- A little about the web
+	</section>	
+
+		<section data-markdown>
+			# Further improvements
+
+			- Make it prettier on many more devices
+			- Make the server send information when temperature is updated
+
+		</section>
+
+</section>
+	
+		<section >
+			<h1>THE END</h1>
+
+			Final report is  <a href="http://sieben.fr/s3_2015/report">online</a> :-)
+
+<figure>
+<img data-src="oz1.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
+<img data-src="oz2.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
+<img data-src="work.jpg" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;">
+<figcaption>Work hard, play hard, sleep hard</figcaption>
+</figure>
+
+			
+<p style="clear: both;">
+
+
+
+		</section>
+
+	</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+			</script>
+
+		</body>
+		</html>
